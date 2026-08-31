@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iframe Form</title>
+</head>
+<body>
+    <h1>Simple Form</h1>
+    <form action="q17-result.html" target="resultFrame">
+        <label for="text">Enter Text:</label>
+        <input type="text" id="text" name="text">
+        <button type="submit">Submit</button>
+    </form>
+    <!-- The result page loads in this iframe after Submit is clicked. -->
+    <iframe name="resultFrame" src="about:blank" width="80%" height="150" title="Form Result"></iframe>
+</body>
+</html>

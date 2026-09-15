@@ -1,0 +1,13 @@
+/* Q4: Box shadows, text shadow, hover lift and transitions */
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: Arial, sans-serif; background: #e2e8f0; color: #172033; }
+main { width: 90%; max-width: 1100px; text-align: center; }
+h1 { text-shadow: 3px 3px 5px rgba(0,0,0,.25); }
+.cards { display: flex; justify-content: center; gap: 2rem; }
+.card { flex: 1; max-width: 280px; padding: 3rem 2rem; background: white; border-radius: 15px; transition: transform .3s ease, box-shadow .3s ease; }
+.card h2 { text-shadow: 2px 2px 4px rgba(0,0,0,.2); }
+.soft { box-shadow: 0 4px 10px rgba(0,0,0,.12); }
+.medium { box-shadow: 0 10px 20px rgba(0,0,0,.2); }
+.strong { box-shadow: 0 18px 35px rgba(0,0,0,.3); }
+.card:hover { transform: translateY(-10px); box-shadow: 0 22px 40px rgba(0,0,0,.35); }
+@media (max-width: 700px) { .cards { flex-direction: column; align-items: center; } }

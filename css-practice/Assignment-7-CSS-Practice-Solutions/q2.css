@@ -1,0 +1,9 @@
+/* Q2: Width, height, min-height, max-width and overflow */
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; background: #eef2f7; }
+main { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+.size-container { width: 100%; display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.size-box { padding: 1.5rem; border-radius: 12px; color: white; text-align: center; overflow: auto; }
+.px { width: 220px; height: 180px; min-height: 150px; background: #2563eb; }
+.percent { width: 28%; min-height: 220px; max-width: 320px; background: #16a34a; }
+.vh { width: 250px; height: 30vh; max-width: 300px; background: #9333ea; }

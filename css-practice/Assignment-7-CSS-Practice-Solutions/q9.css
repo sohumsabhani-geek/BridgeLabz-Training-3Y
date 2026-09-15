@@ -1,0 +1,9 @@
+/* Q9: Outline styles, offset and focus styling */
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; font-family: Arial, sans-serif; background: #eef2f7; }
+form { width: min(90vw, 500px); padding: 2.5rem; display: flex; flex-direction: column; gap: .7rem; background: white; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,.1); }
+input, textarea { width: 100%; padding: .9rem; border: 1px solid #94a3b8; border-radius: 8px; font: inherit; }
+input:focus { outline: 3px solid #2563eb; outline-offset: 3px; border-color: #2563eb; }
+textarea:focus { outline: 3px dashed #16a34a; outline-offset: 4px; border-color: #16a34a; }
+button { margin-top: .8rem; padding: .9rem; border: 2px solid #172033; border-radius: 8px; background: #172033; color: white; cursor: pointer; transition: all .3s ease; }
+button:focus { outline: 3px double #f59e0b; outline-offset: 3px; }

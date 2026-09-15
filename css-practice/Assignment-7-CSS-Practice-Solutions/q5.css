@@ -1,0 +1,38 @@
+/* Q5: Advanced selectors */
+
+/* Attribute selector: inputs whose type is text */
+input[type="text"] { padding: 1rem; border: 2px solid #64748b; border-radius: 8px; }
+
+/* Attribute selector: links beginning with https */
+a[href^="https"] { color: #16a34a; font-weight: bold; }
+
+/* :hover pseudo-class */
+a:hover { text-decoration: underline; }
+
+/* :focus pseudo-class */
+input:focus { outline: 3px solid #93c5fd; }
+
+/* :nth-child() pseudo-class */
+.items li:nth-child(2) { background: #dbeafe; }
+
+/* ::before and ::after pseudo-elements */
+.note::before { content: "Note: "; font-weight: bold; }
+.note::after { content: " ✓"; }
+
+/* Child combinator > */
+.content > .items { border: 2px solid #cbd5e1; padding: 1rem 2rem; }
+
+/* Adjacent sibling combinator + */
+input + .items { margin-top: 1.5rem; }
+
+/* General sibling combinator ~ */
+input ~ .links { margin-top: 1.5rem; }
+
+/* Descendant combinator */
+.content p { line-height: 1.7; }
+
+body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; background: #f8fafc; color: #172033; }
+main { width: 90%; max-width: 800px; margin: auto; padding: 4rem 0; }
+.content { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,.1); }
+.items { list-style-position: inside; }
+.links { display: flex; gap: 2rem; }

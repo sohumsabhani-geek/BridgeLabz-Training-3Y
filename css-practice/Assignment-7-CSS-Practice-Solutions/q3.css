@@ -1,0 +1,9 @@
+/* Q3: Linear, radial and fixed background gradients */
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; color: white; }
+header { position: fixed; top: 0; left: 0; width: 100%; z-index: 10; padding: 1rem; text-align: center; background: rgba(15, 23, 42, .9); }
+main { min-height: 100vh; padding-top: 80px; }
+main section { min-height: 65vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 3rem; }
+.linear { background: linear-gradient(120deg, #2563eb, #9333ea); }
+.radial { background: radial-gradient(circle, #f59e0b, #dc2626 55%, #7f1d1d); background-attachment: fixed; }
+footer { padding: 1.2rem; text-align: center; background: #0f172a; }

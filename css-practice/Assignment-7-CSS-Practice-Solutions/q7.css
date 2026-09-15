@@ -1,0 +1,15 @@
+/* Q7: Typography, spacing and pseudo-elements */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f8fafc; color: #172033; }
+main { width: 90%; max-width: 850px; margin: auto; padding: 4rem 0; }
+article { background: white; padding: 2.5rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,.1); }
+h1 { font-family: Georgia, serif; font-size: 2.4rem; font-weight: 700; text-align: center; line-height: 1.2; letter-spacing: 1px; }
+p { font-size: 1.05rem; line-height: 1.8; text-align: justify; }
+.serif { font-family: Georgia, serif; font-weight: 400; }
+.sans { font-family: Arial, sans-serif; font-weight: 600; }
+.wide { letter-spacing: 2px; }
+mark { background: #fde68a; color: #78350f; padding: .15rem .3rem; }
+strong { color: #1d4ed8; }
+em { color: #7e22ce; }
+article p:first-of-type::first-letter { font-size: 3rem; font-weight: bold; float: left; line-height: .9; margin-right: .2rem; }
+article p:first-of-type::first-line { font-weight: 700; }

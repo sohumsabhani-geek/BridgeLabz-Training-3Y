@@ -1,0 +1,13 @@
+/* Q8: Visual box model layers and box-sizing comparison */
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; font-family: Arial, sans-serif; background: #f8fafc; color: #172033; }
+main { width: 92%; max-width: 900px; margin: auto; padding: 3rem 0; text-align: center; }
+.demo { display: flex; justify-content: center; align-items: center; margin: 2rem auto; }
+.margin-layer { padding: 35px; background: #fef3c7; outline: 3px dashed #f59e0b; }
+.border-layer { padding: 30px; background: #bfdbfe; border: 12px solid #2563eb; }
+.padding-layer { padding: 30px; background: #bbf7d0; }
+.content-layer { width: 160px; height: 100px; display: flex; align-items: center; justify-content: center; background: #fecaca; }
+.label { display: block; font-weight: bold; }
+.description { text-align: left; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,.08); }
+.description p { line-height: 1.6; }
+.content-layer { box-sizing: content-box; }

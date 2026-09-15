@@ -1,0 +1,25 @@
+/* Q4: Element selector */
+p{line-height:1.7;color:#334155}
+
+/* Q4: Class selector */
+.highlight{background:#fef3c7;padding:.4rem}
+
+/* Q4: ID selector */
+#intro{padding:1rem;border-left:5px solid #2563eb}
+
+/* Q4: Attribute selector */
+a[href^="https"]{color:#16a34a;font-weight:bold}
+
+/* Q4: Child combinator > */
+.content>ul{border:2px solid #cbd5e1;padding:1rem 2rem}
+
+/* Q4: Adjacent sibling + */
+h2+ul{margin-top:1rem}
+
+/* Q4: General sibling ~ */
+h2~a{display:inline-block;margin-top:1rem}
+
+/* Q4: Descendant selector */
+.content li{margin:.6rem 0}
+
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f8fafc;color:#172033}header,footer{padding:1.2rem;text-align:center;background:#172033;color:white}main{width:90%;max-width:800px;margin:auto;padding:3rem 0}.content{margin-top:2rem;padding:2rem;background:white;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.1)}

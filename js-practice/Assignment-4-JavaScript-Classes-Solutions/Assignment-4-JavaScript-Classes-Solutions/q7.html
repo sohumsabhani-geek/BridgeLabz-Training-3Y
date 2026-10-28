@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Validation</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 420px; margin: 30px auto; }
+        label { display: block; margin: 12px 0; }
+        input { display: block; width: 100%; box-sizing: border-box; padding: 8px; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm" novalidate>
+        <label>Username <input id="username" autocomplete="username"></label>
+        <label>Password <input id="password" type="password" autocomplete="current-password"></label>
+        <button type="submit">Login</button>
+    </form>
+    <p id="result" aria-live="polite"></p>
+    <script>
+        "use strict";
+        document.getElementById("loginForm").addEventListener("submit", event => {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errors = [];
+            if (username.length < 5) errors.push("Username must be at least 5 characters.");
+            if (password.length < 8) errors.push("Password must be at least 8 characters.");
+            if (!/[A-Z]/.test(password)) errors.push("Password needs an uppercase letter.");
+            if (!/[a-z]/.test(password)) errors.push("Password needs a lowercase letter.");
+            if (!/\d/.test(password)) errors.push("Password needs a number.");
+            if (!/[^A-Za-z0-9]/.test(password)) errors.push("Password needs a special character.");
+            const result = document.getElementById("result");
+            result.className = errors.length ? "error" : "success";
+            result.textContent = errors.length ? errors.join(" ") : "Validation successful!";
+        });
+    </script>
+</body>
+</html>

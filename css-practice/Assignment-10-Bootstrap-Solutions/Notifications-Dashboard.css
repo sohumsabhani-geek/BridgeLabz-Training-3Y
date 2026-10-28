@@ -1,0 +1,5 @@
+/* Notifications Dashboard: Bootstrap alert and card components provide most styling. */
+body { background: #f4f6f9; }
+.card { border: 0; box-shadow: 0 4px 15px #0000000d; }
+.summary { height: 100%; }
+footer { color: #687080; }

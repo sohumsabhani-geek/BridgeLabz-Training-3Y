@@ -1,0 +1,8 @@
+/* Travel Agency: Bootstrap Carousel and progress bar are styled with small CSS rules. */
+body { color: #243047; }
+header, footer { background: #183b4e; color: white; }
+.brand { color: white; font-size: 1.5rem; font-weight: bold; text-decoration: none; }
+.destination-img { height: 480px; object-fit: cover; filter: brightness(.75); }
+.carousel-caption { text-shadow: 0 2px 5px #000; }
+.booking-progress { max-width: 850px; margin-left: auto; margin-right: auto; }
+@media (max-width: 600px) { .destination-img { height: 300px; } .carousel-caption h2 { font-size: 1.2rem; } .carousel-caption p { font-size: .9rem; } }

@@ -1,0 +1,7 @@
+/* Company Landing Page: Bootstrap provides the responsive grid and buttons. */
+:root { --bs-primary: #4f46e5; }
+body { color: #20243a; }
+.site-header, footer { background: #18213b; color: white; }
+.hero { background: #f0f2ff; }
+.hero-card { background: white; box-shadow: 0 10px 30px #18213b18; }
+.card { border: 0; box-shadow: 0 3px 12px #18213b12; }

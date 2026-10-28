@@ -1,0 +1,7 @@
+/* Pricing Plans: Bootstrap cards and columns create the responsive layout. */
+body { background: #f5f7fc; color: #202943; }
+header { background: #e9edff; }
+.plan { border: 0; border-radius: 14px; transition: transform .25s, box-shadow .25s; }
+.plan:hover { transform: translateY(-5px); box-shadow: 0 1rem 2rem #18213b20; }
+.pro { border: 2px solid #4f46e5; }
+footer { color: #6c757d; }

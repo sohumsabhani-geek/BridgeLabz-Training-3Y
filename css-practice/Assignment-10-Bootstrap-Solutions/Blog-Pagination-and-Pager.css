@@ -1,0 +1,5 @@
+/* Blog Pagination: Bootstrap pagination handles spacing and active page styles. */
+body { background: #f7f7fa; color: #292d38; }
+header { background: #26354a; color: white; }
+.post { background: white; border-radius: 8px; box-shadow: 0 2px 8px #0000000b; }
+footer { color: #6c757d; }

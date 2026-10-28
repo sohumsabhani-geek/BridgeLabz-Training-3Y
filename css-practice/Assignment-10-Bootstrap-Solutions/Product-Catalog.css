@@ -1,0 +1,5 @@
+/* Product Catalog: the Bootstrap grid handles responsive columns. */
+body { color: #252525; }
+.product { border: 0; transition: transform .25s, box-shadow .25s; }
+.product img { height: 170px; object-fit: cover; }
+.product:hover { transform: translateY(-4px); box-shadow: 0 .7rem 1.5rem #00000020; }

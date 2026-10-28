@@ -1,0 +1,4 @@
+/* Task Tracker: Bootstrap list-group and badge classes show task status. */
+body { background: #f5f7fb; }
+.list-group-item { padding: 1rem; }
+footer { color: #6c757d; }

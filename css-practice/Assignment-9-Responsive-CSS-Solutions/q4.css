@@ -1,0 +1,12 @@
+/* Q4: Responsive font sizes with clamp() */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; color: #252525; background: #f1f5fb; }
+main { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.content { max-width: 850px; padding: 35px; text-align: center; background: white; border-radius: 10px; }
+h1 { font-size: clamp(1.5rem, 4vw, 3rem); }
+p { font-size: clamp(1rem, 2vw, 1.5rem); line-height: 1.7; }
+.lead { color: #4b5563; }
+@media (max-width: 700px) {
+    .content { padding: 20px; }
+    p { line-height: 1.5; }
+}

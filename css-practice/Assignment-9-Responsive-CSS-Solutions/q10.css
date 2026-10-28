@@ -1,0 +1,16 @@
+/* Q10: Grid dashboard with hover effects */
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; font-family: Arial, sans-serif; color: #222; background: #f1f4f8; }
+header { padding: 16px 25px; background: #26354a; color: white; }
+header h1, header p { margin: 5px 0; }
+.dashboard { flex: 1; display: grid; grid-template-columns: 220px 1fr; }
+aside { padding: 20px; background: #e0e6ef; display: flex; flex-direction: column; gap: 10px; }
+aside a { color: #222; text-decoration: none; padding: 8px; }
+aside a:hover { background: #cbd5e1; }
+.cards { padding: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+article { padding: 18px; background: white; border-radius: 8px; box-shadow: 0 2px 7px #0001; animation: load .6s ease both; transition: transform .3s, box-shadow .3s; }
+article:hover { transform: scale(1.02); box-shadow: 0 7px 15px #0002; }
+article p { line-height: 1.5; }
+code { display: block; padding: 8px; background: #edf0f5; overflow-wrap: anywhere; }
+@keyframes load { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 750px) { .dashboard { grid-template-columns: 1fr; } aside { flex-direction: row; flex-wrap: wrap; } .cards { grid-template-columns: 1fr; } }

@@ -1,0 +1,19 @@
+/* Q2: Flexbox homepage */
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; font-family: Arial, sans-serif; color: #222; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 16px 6%; background: #26354a; color: white; }
+.logo { margin: 0; }
+nav { display: flex; gap: 18px; }
+nav a { color: white; text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+main { flex: 1; }
+.intro { text-align: center; padding: 40px 15px; background: #e5edfa; }
+.features { display: flex; gap: 18px; padding: 25px 6%; }
+.features article { flex: 1; padding: 20px; background: #f4f6f8; border-radius: 8px; transition: transform .3s; }
+.features article:hover { transform: scale(1.03); }
+footer { text-align: center; padding: 18px; background: #e1e5eb; }
+@media (max-width: 750px) {
+    header { flex-direction: column; gap: 12px; }
+    nav { flex-wrap: wrap; justify-content: center; }
+    .features { flex-direction: column; }
+}

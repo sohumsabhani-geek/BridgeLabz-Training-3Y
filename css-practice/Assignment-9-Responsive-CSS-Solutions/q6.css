@@ -1,0 +1,12 @@
+/* Q6: CSS concepts in a responsive grid */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; color: #222; background: #f4f6f9; }
+header, footer { text-align: center; padding: 18px; background: #26354a; color: white; }
+header p { margin-bottom: 0; }
+.topics { max-width: 1000px; margin: 25px auto; padding: 0 16px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+article { padding: 18px; background: white; border-radius: 8px; transition: transform .3s, box-shadow .3s; }
+article:hover { transform: translateY(-3px); box-shadow: 0 5px 12px #0002; }
+article h2 { margin-top: 0; }
+code { display: block; padding: 10px; background: #e8edf5; overflow-wrap: anywhere; }
+@media (min-width: 1000px) { .topics { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px) { .topics { grid-template-columns: 1fr; } }

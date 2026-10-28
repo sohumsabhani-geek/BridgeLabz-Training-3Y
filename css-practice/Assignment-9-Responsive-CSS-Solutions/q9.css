@@ -1,0 +1,11 @@
+/* Q9: Three responsive design principles */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f3f5f8; color: #222; }
+header { padding: 18px; text-align: center; background: #26354a; color: white; }
+.principles { max-width: 1100px; margin: 25px auto; padding: 0 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+article { padding: 18px; background: white; border: 1px solid #ddd; border-radius: 8px; transition: background .3s, color .3s; }
+article:hover { background: linear-gradient(135deg, #3b5b9a, #497f86); color: white; }
+article p { line-height: 1.5; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 10px; background: #edf0f5; color: #222; border-radius: 5px; }
+article:hover pre { background: #ffffffd9; }
+@media (max-width: 600px) { .principles { grid-template-columns: 1fr; } }

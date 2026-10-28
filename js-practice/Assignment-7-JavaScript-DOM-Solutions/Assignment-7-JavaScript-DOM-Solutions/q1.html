@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Product List Manager</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:650px;margin:30px auto;padding:0 12px}
+form{display:flex;gap:8px}input{padding:8px;flex:1}button{padding:7px 10px;cursor:pointer}
+li{display:flex;align-items:center;gap:8px;margin:10px 0}li span{flex:1}.editing{border:1px solid #aaa;padding:5px}
+</style>
+</head>
+<body>
+<h2>Product List Manager</h2>
+<form id="addForm"><input id="productInput" placeholder="New product name" required><button>Add</button></form>
+<ul id="productList"></ul>
+<script>
+"use strict";
+const form=document.getElementById("addForm");
+const input=document.getElementById("productInput");
+const list=document.getElementById("productList");
+let editingItem=null;
+function saveEdit(){
+    if(!editingItem)return;
+    const editor=editingItem.querySelector("input");
+    const label=editingItem.querySelector("span");
+    if(editor&&label)label.textContent=editor.value.trim()||label.dataset.previous;
+    if(editor)editor.remove();
+    if(label)label.hidden=false;
+    editingItem.classList.remove("editing");
+    editingItem=null;
+}
+function addProduct(name){
+    const item=document.createElement("li");
+    const label=document.createElement("span");label.textContent=name;
+    const edit=document.createElement("button");edit.textContent="Edit";edit.dataset.action="edit";
+    const remove=document.createElement("button");remove.textContent="Delete";remove.dataset.action="delete";
+    item.append(label,edit,remove);list.appendChild(item);
+}
+form.addEventListener("submit",event=>{
+    event.preventDefault();const name=input.value.trim();
+    if(name){saveEdit();addProduct(name);input.value="";input.focus();}
+});
+list.addEventListener("click",event=>{
+    const button=event.target.closest("button[data-action]");
+    if(!button)return;
+    const item=button.closest("li");
+    if(button.dataset.action==="delete"){if(item===editingItem)editingItem=null;item.remove();return;}
+    saveEdit();editingItem=item;
+    const label=item.querySelector("span");label.dataset.previous=label.textContent;label.hidden=true;
+    const editor=document.createElement("input");editor.value=label.textContent;editor.className="editing";
+    item.insertBefore(editor,label);editor.focus();editor.select();
+});
+document.addEventListener("click",event=>{
+    if(editingItem&&!editingItem.contains(event.target))saveEdit();
+});
+</script>
+</body></html>

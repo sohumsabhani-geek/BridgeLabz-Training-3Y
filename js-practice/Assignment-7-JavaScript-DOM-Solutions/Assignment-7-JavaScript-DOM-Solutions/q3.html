@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Multi-Step Form</title>
+<style>body{font-family:Arial;max-width:480px;margin:30px auto}label{display:block;margin:12px 0}input{display:block;width:100%;box-sizing:border-box;padding:9px}.step{display:none}.step.active{display:block}.error{color:red}</style></head>
+<body><h2>Registration - 3 Steps</h2>
+<form id="multiForm">
+<div class="step active"><label>Name<input id="name" required pattern="[A-Za-z ]+" title="Use letters and spaces only"></label></div>
+<div class="step"><label>Email<input id="email" type="email" required></label></div>
+<div class="step"><label>Password<input id="password" type="password" required minlength="8"></label></div>
+<p id="error" class="error"></p><button type="button" id="back">Back</button> <button type="button" id="next">Next</button>
+</form><section id="summary" hidden></section>
+<script>
+"use strict";
+const form=document.getElementById("multiForm"),steps=[...document.querySelectorAll(".step")];
+const fields=[document.getElementById("name"),document.getElementById("email"),document.getElementById("password")];
+let current=0;
+function showStep(){steps.forEach((step,index)=>step.classList.toggle("active",index===current));document.getElementById("back").hidden=current===0;document.getElementById("next").textContent=current===2?"Finish":"Next";}
+document.getElementById("back").addEventListener("click",()=>{if(current>0){current--;document.getElementById("error").textContent="";showStep();}});
+document.getElementById("next").addEventListener("click",()=>{
+    const field=fields[current];if(!field.checkValidity()){field.reportValidity();return;}
+    if(current<2){current++;showStep();return;}
+    document.getElementById("summary").hidden=false;
+    document.getElementById("summary").innerHTML=`<h3>Summary</h3><p>Name: ${escapeText(fields[0].value)}</p><p>Email: ${escapeText(fields[1].value)}</p><p>Password: ${"*".repeat(fields[2].value.length)}</p>`;
+    form.hidden=true;
+});
+function escapeText(value){const div=document.createElement("div");div.textContent=value;return div.innerHTML;}
+showStep();
+</script></body></html>

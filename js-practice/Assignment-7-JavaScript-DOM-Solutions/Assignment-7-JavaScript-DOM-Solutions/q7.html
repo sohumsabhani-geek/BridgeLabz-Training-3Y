@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mouse Coordinates Logger</title>
+<style>body{font-family:Arial;margin:25px}.tracking-box{width:400px;height:400px;max-width:90vw;border:2px solid #333;position:relative;background:#f4f4f4;overflow:hidden}.dot{width:12px;height:12px;border-radius:50%;background:red;position:absolute;transform:translate(-50%,-50%)}</style></head>
+<body><h2>Mouse Path & Coordinates</h2><p id="coordinates">Move your mouse inside the box.</p><div class="tracking-box" id="trackingBox"></div>
+<script>
+"use strict";
+const box=document.getElementById("trackingBox"),coordinates=document.getElementById("coordinates");
+box.addEventListener("mousemove",event=>{coordinates.textContent=`clientX: ${event.clientX}, clientY: ${event.clientY}`;});
+box.addEventListener("dblclick",event=>{const rect=box.getBoundingClientRect(),dot=document.createElement("span");dot.className="dot";dot.style.left=`${event.clientX-rect.left}px`;dot.style.top=`${event.clientY-rect.top}px`;box.appendChild(dot);});
+</script></body></html>

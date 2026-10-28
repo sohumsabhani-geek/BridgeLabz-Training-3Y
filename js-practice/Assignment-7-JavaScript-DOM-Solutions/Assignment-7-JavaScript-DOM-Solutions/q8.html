@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Custom Dropdown</title>
+<style>body{font-family:Arial;margin:30px}.dropdown{position:relative;display:inline-block}.options{display:none;position:absolute;top:100%;left:0;min-width:180px;border:1px solid #aaa;background:white;z-index:2}.options.open{display:block}.options button{display:block;width:100%;padding:9px;text-align:left;border:0;background:white}.options button:hover{background:#eee}#toggle{padding:10px}</style></head>
+<body><h2>Custom Dropdown</h2><div class="dropdown" id="dropdown"><button id="toggle" type="button">Choose a color ▾</button><div class="options" id="options"><button type="button">Red</button><button type="button">Green</button><button type="button">Blue</button></div></div>
+<script>
+"use strict";
+const dropdown=document.getElementById("dropdown"),toggle=document.getElementById("toggle"),options=document.getElementById("options");
+toggle.addEventListener("click",event=>{event.stopPropagation();options.classList.toggle("open");});
+options.addEventListener("click",event=>{if(event.target.tagName==="BUTTON"){toggle.textContent=event.target.textContent+" ▾";options.classList.remove("open");}});
+document.addEventListener("click",event=>{if(!dropdown.contains(event.target))options.classList.remove("open");},true);
+// The final `true` registers this listener in the capturing phase.
+</script></body></html>

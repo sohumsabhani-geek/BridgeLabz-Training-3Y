@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Form Submit Blocker</title>
+<style>body{font-family:Arial;max-width:480px;margin:30px auto}label{display:block;margin:12px 0}input{display:block;width:100%;box-sizing:border-box;padding:8px}.error{color:red;font-size:.9rem}.invalid{border:2px solid red}.success{color:green}</style></head>
+<body><h2>Registration Form</h2><form id="form" novalidate>
+<label>Name<input id="name"></label><div id="nameError" class="error"></div>
+<label>Email<input id="email"></label><div id="emailError" class="error"></div>
+<label>Password<input id="password" type="password"></label><div id="passwordError" class="error"></div>
+<button type="submit">Submit</button></form><p id="result" aria-live="polite"></p>
+<script>
+"use strict";
+const fields={
+name:{input:document.getElementById("name"),error:document.getElementById("nameError"),validate:value=>value.trim()!=="",message:"Name is required."},
+email:{input:document.getElementById("email"),error:document.getElementById("emailError"),validate:value=>value.trim().includes("@"),message:"Email is required and must contain @."},
+password:{input:document.getElementById("password"),error:document.getElementById("passwordError"),validate:value=>value.length>=6,message:"Password must be at least 6 characters."}
+};
+function validateField(field){const valid=field.validate(field.input.value);field.error.textContent=valid?"":field.message;field.input.classList.toggle("invalid",!valid);return valid;}
+Object.values(fields).forEach(field=>field.input.addEventListener("input",()=>{validateField(field);document.getElementById("result").textContent="";}));
+document.getElementById("form").addEventListener("submit",event=>{event.preventDefault();const valid=Object.values(fields).map(validateField).every(Boolean);const result=document.getElementById("result");if(valid){result.className="success";result.textContent="Form Submitted Successfully";}else{result.textContent="Please correct the errors above.";result.className="";}});
+</script></body></html>

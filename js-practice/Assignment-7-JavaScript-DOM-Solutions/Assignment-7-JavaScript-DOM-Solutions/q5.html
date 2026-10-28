@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Image Gallery Modal</title>
+<style>body{font-family:Arial;margin:25px}.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:720px}.gallery img{width:100%;height:130px;object-fit:cover;cursor:pointer;border-radius:6px}.modal{display:none;position:fixed;inset:0;background:#000b;align-items:center;justify-content:center}.modal.open{display:flex}.modal-content{background:white;padding:12px;border-radius:8px;max-width:85vw;max-height:85vh}.modal-content img{display:block;max-width:80vw;max-height:75vh}</style></head>
+<body><h2>Image Gallery</h2><div class="gallery" id="gallery"></div>
+<div class="modal" id="modal"><div class="modal-content" id="modalContent"><button id="close">Close</button><img id="largeImage" alt="Preview"></div></div>
+<script>
+"use strict";
+const gallery=document.getElementById("gallery"),modal=document.getElementById("modal"),modalContent=document.getElementById("modalContent"),largeImage=document.getElementById("largeImage");
+const imageUrls=[
+"https://picsum.photos/id/1015/500/350","https://picsum.photos/id/1025/500/350",
+"https://picsum.photos/id/1035/500/350","https://picsum.photos/id/1043/500/350",
+"https://picsum.photos/id/1069/500/350","https://picsum.photos/id/1074/500/350"];
+imageUrls.forEach((url,index)=>{const image=document.createElement("img");image.src=url;image.alt=`Gallery image ${index+1}`;image.addEventListener("click",()=>{largeImage.src=url;largeImage.alt=image.alt;modal.classList.add("open");});gallery.appendChild(image);});
+modal.addEventListener("click",()=>modal.classList.remove("open"));
+modalContent.addEventListener("click",event=>event.stopPropagation());
+document.getElementById("close").addEventListener("click",()=>modal.classList.remove("open"));
+</script></body></html>

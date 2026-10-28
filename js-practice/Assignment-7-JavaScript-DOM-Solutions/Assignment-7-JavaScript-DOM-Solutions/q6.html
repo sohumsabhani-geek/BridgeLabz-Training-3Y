@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Student Table Filter</title>
+<style>body{font-family:Arial;max-width:700px;margin:30px auto}input{padding:8px;width:100%;box-sizing:border-box;margin-bottom:12px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:9px;text-align:left}#noResults{color:#b00020}</style></head>
+<body><h2>Student Table Filter</h2><input id="search" placeholder="Search name, branch, or CGPA...">
+<table><thead><tr><th>Name</th><th>Branch</th><th>CGPA</th></tr></thead><tbody id="students">
+<tr><td>Aarav</td><td>CSE</td><td>8.2</td></tr><tr><td>Diya</td><td>ECE</td><td>9.1</td></tr><tr><td>Kabir</td><td>CSE</td><td>7.6</td></tr><tr><td>Mira</td><td>IT</td><td>8.7</td></tr><tr><td>Rohan</td><td>Mechanical</td><td>7.9</td></tr>
+</tbody></table><p id="noResults" hidden>No results found</p>
+<script>
+"use strict";
+const search=document.getElementById("search"),rows=[...document.querySelectorAll("#students tr")],noResults=document.getElementById("noResults");
+search.addEventListener("input",()=>{const query=search.value.trim().toLowerCase();let visibleCount=0;rows.forEach(row=>{const matches=row.textContent.toLowerCase().includes(query);row.hidden=!matches;if(matches)visibleCount++;});noResults.hidden=visibleCount!==0;});
+</script></body></html>
